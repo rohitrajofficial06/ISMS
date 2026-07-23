@@ -1,0 +1,117 @@
+﻿@model IEnumerable<ISMSPortal.ViewModels.Policy.PolicyListViewModel>
+
+@{
+    ViewData["Title"] = "Policies";
+}
+
+<partial name="_AlertMessage" />
+
+<div class="card">
+
+    <div class="card-header d-flex justify-content-between align-items-center">
+
+        <h3 class="card-title">Policies</h3>
+
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Create Policy
+        </a>
+
+    </div>
+
+    <div class="card-body">
+
+        <table class="table table-bordered table-hover">
+
+            <thead>
+
+                <tr>
+                    <th>Policy Code</th>
+                    <th>Policy Name</th>
+                    <th>Category</th>
+                    <th>Version</th>
+                    <th>Effective Date</th>
+                    <th>Published</th>
+                    <th width="180">Action</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @if (Model.Any())
+                {
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>@item.PolicyCode</td>
+
+                            <td>@item.PolicyName</td>
+
+                            <td>@item.Category</td>
+
+                            <td>@item.Version</td>
+
+                            <td>@item.EffectiveDate.ToString("dd-MMM-yyyy")</td>
+
+                            <td>
+                                @if (item.IsPublished)
+                                {
+                                    <span class="badge bg-success">Published</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">Draft</span>
+                                }
+                            </td>
+
+                            <td>
+
+                                <a asp-action="Details"
+                                   asp-route-id="@item.PolicyId"
+                                   class="btn btn-info btn-sm">
+                                    View
+                                </a>
+
+                                <a asp-action="Edit"
+                                   asp-route-id="@item.PolicyId"
+                                   class="btn btn-warning btn-sm">
+                                    Edit
+                                </a>
+
+                                <form asp-action="Delete"
+                                      asp-route-id="@item.PolicyId"
+                                      method="post"
+                                      class="d-inline">
+
+                                    @Html.AntiForgeryToken()
+
+                                    <button type="submit"
+                                            class="btn btn-danger btn-sm"
+                                            onclick="return confirm('Delete this policy?');">
+                                        Delete
+                                    </button>
+
+                                </form>
+
+                            </td>
+
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="7" class="text-center">
+                            No policies found.
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

@@ -1,0 +1,56 @@
+﻿@model ISMSPortal.ViewModels.SecurityAlert.SecurityAlertEditViewModel
+
+<div class="card">
+
+    <div class="card-header">
+
+        <h4>@Model.Title</h4>
+
+    </div>
+
+    <div class="card-body">
+
+        <p>
+
+            <strong>Severity :</strong>
+
+            @Model.Severity
+
+        </p>
+
+        <p>
+
+            <strong>Publish Date :</strong>
+
+            @Model.PublishDate.ToString("dd-MMM-yyyy")
+
+        </p>
+
+        <p>
+
+            @Model.Description
+
+        </p>
+
+    </div>
+
+    <div class="card-footer">
+
+        <a asp-action="Edit"
+           asp-route-id="@Model.SecurityAlertId"
+           class="btn btn-warning">
+
+            Edit
+
+        </a>
+
+        <a asp-action="Index"
+           class="btn btn-secondary">
+
+            Back
+
+        </a>
+
+    </div>
+
+</div>

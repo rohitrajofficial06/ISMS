@@ -1,0 +1,108 @@
+﻿@model ISMSPortal.ViewModels.Policy.PolicyEditViewModel
+
+@{
+    ViewData["Title"] = "Policy Details";
+}
+
+<div class="card">
+
+    <div class="card-header">
+        <h3>@Model.PolicyName</h3>
+    </div>
+
+    <div class="card-body">
+
+        <table class="table table-bordered">
+
+            <tr>
+                <th width="220">Policy Code</th>
+                <td>@Model.PolicyCode</td>
+            </tr>
+
+            <tr>
+                <th>Policy Name</th>
+                <td>@Model.PolicyName</td>
+            </tr>
+
+            <tr>
+                <th>Category</th>
+                <td>@Model.Category</td>
+            </tr>
+
+            <tr>
+                <th>Version</th>
+                <td>@Model.Version</td>
+            </tr>
+
+            <tr>
+                <th>Effective Date</th>
+                <td>@Model.EffectiveDate.ToString("dd-MMM-yyyy")</td>
+            </tr>
+
+            <tr>
+                <th>Review Date</th>
+                <td>@Model.ReviewDate?.ToString("dd-MMM-yyyy")</td>
+            </tr>
+
+            <tr>
+                <th>Owner</th>
+                <td>@Model.Owner</td>
+            </tr>
+
+            <tr>
+                <th>Description</th>
+                <td>@Model.Description</td>
+            </tr>
+
+            <tr>
+                <th>Published</th>
+                <td>
+                    @if (Model.IsPublished)
+                    {
+                        <span class="badge bg-success">Published</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">Draft</span>
+                    }
+                </td>
+            </tr>
+
+            <tr>
+                <th>Attachment</th>
+                <td>
+                    @if (!string.IsNullOrWhiteSpace(Model.AttachmentPath))
+                    {
+                        <a href="@Model.AttachmentPath"
+                           target="_blank"
+                           class="btn btn-outline-primary btn-sm">
+                            View Attachment
+                        </a>
+                    }
+                    else
+                    {
+                        <span class="text-muted">No Attachment</span>
+                    }
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="card-footer">
+
+        <a asp-action="Edit"
+           asp-route-id="@Model.PolicyId"
+           class="btn btn-warning">
+            Edit
+        </a>
+
+        <a asp-action="Index"
+           class="btn btn-secondary">
+            Back
+        </a>
+
+    </div>
+
+</div>

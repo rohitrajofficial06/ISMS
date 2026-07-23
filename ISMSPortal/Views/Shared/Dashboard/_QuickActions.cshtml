@@ -1,0 +1,85 @@
+﻿@model List<ISMSPortal.ViewModels.Dashboard.QuickActionWidgetViewModel>
+
+<div class="card shadow-sm border-0 quick-action-card">
+
+    <div class="card-header bg-white border-0">
+
+        <h5 class="font-weight-bold mb-0">
+            Quick Actions
+        </h5>
+
+    </div>
+
+    <div class="list-group list-group-flush">
+
+        @foreach (var item in Model)
+        {
+            string image = "";
+
+            switch (item.Title)
+            {
+                case "Report Incident":
+                    image = "/images/QuickAction/reportIncident.png";
+                    break;
+
+                case "Report Phishing Email":
+                    image = "/images/QuickAction/phishingEmail.png";
+                    break;
+
+                case "Policy Repository":
+                    image = "/images/QuickAction/policyRepo.png";
+                    break;
+
+                case "Training & Awareness":
+                    image = "/images/QuickAction/training.png";
+                    break;
+
+                case "Session Recordings":
+                    image = "/images/QuickAction/session.png";
+                    break;
+
+                case "Posters & Presentations":
+                    image = "/images/QuickAction/poster.png";
+                    break;
+            }
+
+            <a href="@item.Url"
+               class="list-group-item quick-action-item"
+               target="@(item.OpenInNewTab ? "_blank" : "_self")"
+               rel="noopener noreferrer">
+
+                <div class="d-flex align-items-center">
+
+                    <img src="@image"
+                         class="quick-action-icon" />
+
+                    <div class="ml-3 flex-grow-1">
+
+                        <div class="quick-title">
+
+                            @item.Title
+
+                        </div>
+
+                        <div class="quick-desc">
+
+                            @item.Description
+
+                        </div>
+
+                    </div>
+
+                    <div class="quick-arrow">
+
+                        <i class="fas fa-chevron-right"></i>
+
+                    </div>
+
+                </div>
+
+            </a>
+        }
+
+    </div>
+
+</div>

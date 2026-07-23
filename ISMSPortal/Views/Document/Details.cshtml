@@ -1,0 +1,112 @@
+﻿@model ISMSPortal.ViewModels.Document.DocumentEditViewModel
+
+@{
+    ViewData["Title"] = "Document Details";
+}
+
+<div class="card card-primary">
+
+    <div class="card-header">
+
+        <h3 class="card-title">
+
+            Document Details
+
+        </h3>
+
+    </div>
+
+    <div class="card-body">
+
+        <table class="table table-bordered">
+
+            <tr>
+                <th width="220">Document No</th>
+                <td>@Model.DocumentNumber</td>
+            </tr>
+
+            <tr>
+                <th>Document Name</th>
+                <td>@Model.DocumentName</td>
+            </tr>
+
+            <tr>
+                <th>Category</th>
+                <td>@Model.Category</td>
+            </tr>
+
+            <tr>
+                <th>Owner</th>
+                <td>@Model.Owner</td>
+            </tr>
+
+            <tr>
+                <th>Version</th>
+                <td>@Model.Version</td>
+            </tr>
+
+            <tr>
+                <th>Effective Date</th>
+                <td>@Model.EffectiveDate.ToString("dd-MMM-yyyy")</td>
+            </tr>
+
+            <tr>
+                <th>Expiry Date</th>
+                <td>@Model.ExpiryDate?.ToString("dd-MMM-yyyy")</td>
+            </tr>
+
+            <tr>
+                <th>Description</th>
+                <td>@Model.Description</td>
+            </tr>
+
+            <tr>
+
+                <th>Attachment</th>
+
+                <td>
+
+                    @if (!string.IsNullOrWhiteSpace(Model.AttachmentPath))
+                    {
+                        <a href="@Model.AttachmentPath"
+                           target="_blank"
+                           class="btn btn-primary">
+
+                            <i class="fas fa-eye"></i>
+                            View Document
+
+                        </a>
+                    }
+                    else
+                    {
+                        <span class="text-muted">No attachment available.</span>
+                    }
+
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="card-footer">
+
+        <a asp-action="Edit"
+           asp-route-id="@Model.DocumentId"
+           class="btn btn-warning">
+
+            Edit
+
+        </a>
+
+        <a asp-action="Index"
+           class="btn btn-secondary">
+
+            Back
+
+        </a>
+
+    </div>
+
+</div>

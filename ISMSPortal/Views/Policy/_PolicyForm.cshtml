@@ -1,0 +1,80 @@
+﻿@model ISMSPortal.ViewModels.Policy.PolicyBaseViewModel
+
+<div class="card card-primary">
+
+    <div class="card-body">
+
+        <div class="row">
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="PolicyCode"></label>
+                <input asp-for="PolicyCode" class="form-control" />
+                <span asp-validation-for="PolicyCode" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-8 mb-3">
+                <label asp-for="PolicyName"></label>
+                <input asp-for="PolicyName" class="form-control" />
+                <span asp-validation-for="PolicyName" class="text-danger"></span>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="Category"></label>
+                <input asp-for="Category" class="form-control" />
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="Version"></label>
+                <input asp-for="Version" class="form-control" />
+            </div>
+
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description"
+                      rows="4"
+                      class="form-control"></textarea>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="EffectiveDate"></label>
+                <input asp-for="EffectiveDate"
+                       type="date"
+                       class="form-control" />
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="ReviewDate"></label>
+                <input asp-for="ReviewDate"
+                       type="date"
+                       class="form-control" />
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="Attachment"></label>
+                <input asp-for="Attachment"
+                       type="file"
+                       class="form-control" />
+            </div>
+
+        </div>
+        @if (!string.IsNullOrWhiteSpace(Model.AttachmentPath))
+        {
+            <div class="alert alert-info">
+                Current File :
+                <a href="@Model.AttachmentPath" target="_blank">
+                    View Current Attachment
+                </a>
+            </div>
+        }
+
+    </div>
+
+</div>

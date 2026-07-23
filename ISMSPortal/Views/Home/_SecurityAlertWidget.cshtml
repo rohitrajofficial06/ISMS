@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ISMSPortal.ViewModels.SecurityAlert.SecurityAlertWidgetViewModel>
+
+<div class="card">
+
+    <div class="card-header bg-danger">
+
+        <h3 class="card-title">
+
+            Security Alerts
+
+        </h3>
+
+    </div>
+
+    <div class="card-body">
+
+        @foreach (var item in Model)
+        {
+            <div class="mb-3">
+
+                <strong>
+
+                    @item.Title
+
+                </strong>
+
+                <br />
+
+                <span class="badge bg-danger">
+
+                    @item.Severity
+
+                </span>
+
+            </div>
+        }
+
+    </div>
+
+</div>

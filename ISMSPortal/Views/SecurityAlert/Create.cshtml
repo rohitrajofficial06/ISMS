@@ -1,0 +1,25 @@
+﻿@model ISMSPortal.ViewModels.SecurityAlert.SecurityAlertCreateViewModel
+
+<form asp-action="Create">
+
+    <partial name="_SecurityAlertForm" />
+
+    <button class="btn btn-primary">
+
+        Save
+
+    </button>
+
+    <a asp-action="Index"
+       class="btn btn-secondary">
+
+        Back
+
+    </a>
+
+</form>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

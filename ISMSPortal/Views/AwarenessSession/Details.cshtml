@@ -1,0 +1,37 @@
+﻿@model ISMSPortal.ViewModels.Awareness.AwarenessSessionEditViewModel
+
+<div class="card">
+
+    <div class="card-header">
+
+        <h4>@Model.SessionTitle</h4>
+
+    </div>
+
+    <div class="card-body">
+
+        <dl class="row">
+
+            <dt class="col-sm-3">Session Date</dt>
+            <dd class="col-sm-9">@Model.SessionDate.ToString("dd-MMM-yyyy")</dd>
+
+            <dt class="col-sm-3">Time</dt>
+            <dd class="col-sm-9">@Model.StartTime - @Model.EndTime</dd>
+
+            <dt class="col-sm-3">Audience</dt>
+            <dd class="col-sm-9">@Model.Audience</dd>
+
+            <dt class="col-sm-3">Trainer</dt>
+            <dd class="col-sm-9">@Model.Trainer</dd>
+
+            <dt class="col-sm-3">Venue</dt>
+            <dd class="col-sm-9">@Model.Venue</dd>
+
+            <dt class="col-sm-3">Description</dt>
+            <dd class="col-sm-9">@Model.Description</dd>
+
+        </dl>
+
+    </div>
+
+</div>

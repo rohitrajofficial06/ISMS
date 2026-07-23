@@ -1,0 +1,271 @@
+﻿@model IEnumerable<ISMSPortal.ViewModels.Announcement.AnnouncementListViewModel>
+
+@{
+    ViewData["Title"] = "Announcements";
+}
+
+<div class="card card-primary">
+
+    <div class="card-header">
+        <h3 class="card-title">
+            <i class="fas fa-bullhorn"></i>
+            Announcement Management
+        </h3>
+
+        <div class="card-tools">
+            <a asp-action="Create" class="btn btn-light btn-sm">
+                <i class="fas fa-plus"></i>
+                New Announcement
+            </a>
+        </div>
+    </div>
+
+    <div class="card-body">
+
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show">
+                @TempData["Success"]
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="alert">
+                </button>
+            </div>
+        }
+
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show">
+                @TempData["Error"]
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="alert">
+                </button>
+            </div>
+        }
+
+        <form method="get" asp-action="Index">
+
+            <div class="row mb-3">
+
+                <div class="col-md-4">
+
+                    <input type="text"
+                           name="searchText"
+                           value="@ViewBag.SearchText"
+                           class="form-control"
+                           placeholder="Search title or description..." />
+
+                </div>
+
+                <div class="col-md-2">
+
+                    <button class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                        Search
+                    </button>
+
+                </div>
+
+                <div class="col-md-2">
+
+                    <a asp-action="Index"
+                       class="btn btn-secondary">
+                        Reset
+                    </a>
+
+                </div>
+
+            </div>
+
+        </form>
+
+        <div class="table-responsive">
+
+            <table class="table table-bordered table-hover">
+
+                <thead class="table-light">
+
+                    <tr>
+
+                        <th style="width:60px;">#</th>
+
+                        <th>Title</th>
+
+                        <th>Publish Date</th>
+
+                        <th>Expiry Date</th>
+
+                        <th>Status</th>
+
+                        <th>Pinned</th>
+
+                        <th>Attachment</th>
+
+                        <th style="width:170px;">Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @if (Model.Any())
+                    {
+                        int sr = 1;
+
+                        foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>@sr</td>
+
+                                <td>
+
+                                    <strong>@item.Title</strong>
+
+                                    <br />
+
+                                    <small class="text-muted">
+                                        @item.Description
+                                    </small>
+
+                                </td>
+
+                                <td>
+                                    @item.PublishDate.ToString("dd-MMM-yyyy")
+                                </td>
+
+                                <td>
+                                    @(item.ExpiryDate?.ToString("dd-MMM-yyyy") ?? "-")
+                                </td>
+
+                                <td>
+
+                                    @if (item.IsPublished)
+                                    {
+                                        <span class="badge bg-success">
+                                            Published
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-secondary">
+                                            Draft
+                                        </span>
+                                    }
+
+                                </td>
+
+                                <td>
+
+                                    @if (item.IsPinned)
+                                    {
+                                        <span class="badge bg-warning text-dark">
+                                            Yes
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-light text-dark">
+                                            No
+                                        </span>
+                                    }
+
+                                </td>
+
+                                <td>
+
+                                    @if (!string.IsNullOrWhiteSpace(item.AttachmentPath))
+                                    {
+                                        <a href="@item.AttachmentPath"
+                                           target="_blank"
+                                           class="btn btn-outline-info btn-sm">
+                                            <i class="fas fa-paperclip"></i>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <span>-</span>
+                                    }
+
+                                </td>
+
+                                <td>
+
+                                    <a asp-action="Details"
+                                       asp-route-id="@item.AnnouncementId"
+                                       class="btn btn-info btn-sm">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+
+                                    <a asp-action="Edit"
+                                       asp-route-id="@item.AnnouncementId"
+                                       class="btn btn-warning btn-sm">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+
+                                    <button class="btn btn-danger btn-sm"
+                                            onclick="confirmDelete(@item.AnnouncementId)">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                            sr++;
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+
+                            <td colspan="8" class="text-center">
+
+                                <div class="p-4">
+
+                                    <i class="fas fa-folder-open fa-2x text-muted"></i>
+
+                                    <br /><br />
+
+                                    No announcements found.
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts
+{
+    <script>
+
+        function confirmDelete(id)
+        {
+            var form =
+                document.getElementById("deleteForm");
+
+            form.action =
+                "/Announcement/Delete/" + id;
+
+            var modal =
+                new bootstrap.Modal(
+                    document.getElementById("deleteModal"));
+
+            modal.show();
+        }
+
+    </script>
+}

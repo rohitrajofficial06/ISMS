@@ -1,0 +1,116 @@
+﻿@{
+    var controller = ViewContext.RouteData.Values["controller"]?.ToString();
+}
+
+<div class="isms-sidebar">
+
+    <a asp-controller="Home"
+       asp-action="Index"
+       class="sidebar-item active">
+
+        <img src="~/images/SideNavigation/navHome.png" />
+
+        <span>Home</span>
+
+    </a>
+
+    <a asp-controller="Policy"
+       asp-action="Index"
+       class="sidebar-item">
+
+        <img src="~/images/SideNavigation/navPolicies.png" />
+
+        <span>Policies</span>
+
+    </a>
+
+    <a href="#"
+       class="sidebar-item">
+
+        <img src="~/images/SideNavigation/navProcedures.png" />
+
+        <span>Procedures & SOPs</span>
+
+    </a>
+
+    <a asp-controller="AwarenessSession"
+       asp-action="Index"
+       class="sidebar-item">
+
+        <img src="~/images/SideNavigation/navAwareness.png" />
+
+        <span>Awareness & Training</span>
+
+    </a>
+
+    <a href="#"
+       class="sidebar-item">
+
+        <img src="~/images/SideNavigation/navIncident.png" />
+
+        <span>Incident Management</span>
+
+    </a>
+
+    <a asp-controller="Document"
+       asp-action="Index"
+       class="sidebar-item">
+
+        <img src="~/images/SideNavigation/navDocument.png" />
+
+        <span>Document Library</span>
+
+    </a>
+
+    <a href="#"
+       class="sidebar-item">
+
+        <img src="~/images/SideNavigation/navCertificates.png" />
+
+        <span>Certificates</span>
+
+    </a>
+
+    <a href="#"
+       class="sidebar-item">
+
+        <img src="~/images/SideNavigation/navForms.png" />
+
+        <span>Forms & Templates</span>
+
+    </a>
+
+    <a href="#"
+       class="sidebar-item">
+
+        <img src="~/images/SideNavigation/navFAQs.png" />
+
+        <span>FAQs</span>
+
+    </a>
+
+    <a href="#"
+       class="sidebar-item">
+
+        <img src="~/images/SideNavigation/navUsefulLinks.png" />
+
+        <span>Useful Links</span>
+
+    </a>
+
+</div>
+<div class="contact-card">
+
+    <img src="~/images/SideNavigation/contactUs.png"
+         class="contact-icon" />
+
+    <h5>ISMS Team</h5>
+
+    <p>
+
+        YIL-ISMS-PromotionCenter@yokogawa.com
+
+
+    </p>
+
+</div>

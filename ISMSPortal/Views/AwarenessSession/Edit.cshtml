@@ -1,0 +1,27 @@
+﻿@model ISMSPortal.ViewModels.Awareness.AwarenessSessionEditViewModel
+
+<form asp-action="Edit">
+
+    <input asp-for="AwarenessSessionId" type="hidden" />
+
+    <partial name="_AwarenessSessionForm" />
+
+    <button class="btn btn-warning">
+
+        Update
+
+    </button>
+
+    <a asp-action="Index"
+       class="btn btn-secondary">
+
+        Back
+
+    </a>
+
+</form>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

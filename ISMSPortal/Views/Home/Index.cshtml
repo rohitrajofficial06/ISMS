@@ -1,0 +1,76 @@
+﻿@model ISMSPortal.ViewModels.Dashboard.DashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container-fluid">
+
+    <!-- Hero Banner + Quick Actions-->
+    <div class="row">
+
+        <div class="col-lg-8">
+            <partial name="Dashboard/_HeroBanner"
+                     model="Model.HeroBanner" />
+        </div>
+
+        <div class="col-lg-4">
+            <partial name="Dashboard/_QuickActions"
+                     model="Model.QuickActions" />
+        </div>
+
+    </div>
+
+    <!-- Announcements + Alerts -->
+    <div class="row">
+
+        <div class="col-lg-8">
+            <partial name="Dashboard/_Announcements"
+                     model="Model" />
+        </div>
+
+        <div class="col-lg-4">
+            <partial name="Dashboard/_SecurityAlerts"
+                     model="Model" />
+        </div>
+
+    </div>
+
+    <!-- Policies + Documents -->
+    <div class="row mt-4">
+
+        <div class="col-lg-6">
+            <partial name="Dashboard/_LatestPolicies"
+                     model="Model" />
+        </div>
+
+        <div class="col-lg-6">
+            <partial name="Dashboard/_RecentDocuments"
+                     model="Model" />
+        </div>
+
+    </div>
+
+
+    <!-- Awareness + UpcomingSessions -->
+    <div class="row mt-4">
+
+        <div class="col-lg-6">
+
+            <partial name="Dashboard/_AwarenessProgress"
+                     model="Model.AwarenessProgress" />
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <partial name="Dashboard/_UpcomingSessions"
+                     model="Model.UpcomingSessions" />
+
+        </div>
+
+    </div>
+
+    </div>
+
+</div>

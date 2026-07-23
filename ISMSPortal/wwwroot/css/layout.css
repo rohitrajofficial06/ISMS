@@ -1,0 +1,161 @@
+﻿.main-header {
+    border-bottom: 1px solid #e9ecef;
+    background: #ffffff;
+    z-index: 1035;
+}
+
+    .main-header img {
+        max-height: 55px;
+    }
+
+.header-link {
+    color: #002060;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+    .header-link:hover {
+        color: #0056b3;
+    }
+
+.notification-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    font-size: 11px;
+}
+
+.main-header .form-control {
+    border-radius: 10px 0 0 10px;
+}
+
+.main-header .btn {
+    border-radius: 0 10px 10px 0;
+}
+
+.dropdown-toggle::after {
+    margin-left: .5rem;
+}
+
+/* ==========================
+   Top Navigation
+========================== */
+
+.top-navbar {
+    background: #002060;
+    min-height: 50px;
+}
+
+    .top-navbar .navbar-nav {
+        gap: 8px;
+    }
+
+    .top-navbar .nav-link {
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 12px 18px;
+        border-radius: 6px;
+        transition: all .3s ease;
+    }
+
+        .top-navbar .nav-link:hover {
+            background: rgba(255,255,255,.15);
+            color: #ffffff;
+        }
+
+        .top-navbar .nav-link.active {
+            background: #ffc107;
+            color: #002060;
+            font-weight: 600;
+        }
+
+    .top-navbar .navbar-toggler {
+        border-color: rgba(255,255,255,.3);
+    }
+
+    .top-navbar .navbar-toggler-icon {
+        filter: invert(1);
+    }
+
+/* ===================================
+   Sidebar
+=================================== */
+
+.left-sidebar {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.08);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.sidebar-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #002060;
+    margin-bottom: 20px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .sidebar-menu li {
+        margin-bottom: 5px;
+    }
+
+        .sidebar-menu li a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #495057;
+            padding: 10px 14px;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: .3s;
+        }
+
+            .sidebar-menu li a:hover {
+                background: #eef4ff;
+                color: #002060;
+            }
+
+            .sidebar-menu li a.active {
+                background: #002060;
+                color: #fff;
+            }
+
+.menu-header {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #6c757d;
+}
+
+/* ===================================
+   Footer
+=================================== */
+
+.main-footer {
+    margin-top: 30px;
+    background: #ffffff;
+    border-top: 1px solid #dee2e6;
+    padding: 15px 25px;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #002060;
+    font-weight: 500;
+}
+
+    .footer-link:hover {
+        color: #0056b3;
+    }

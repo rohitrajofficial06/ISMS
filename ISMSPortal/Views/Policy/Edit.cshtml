@@ -1,0 +1,30 @@
+﻿@model ISMSPortal.ViewModels.Policy.PolicyEditViewModel
+
+@{
+    ViewData["Title"] = "Edit Policy";
+}
+
+<h3>Edit Policy</h3>
+
+<form asp-action="Edit"
+      method="post"
+      enctype="multipart/form-data">
+
+    <input asp-for="PolicyId" type="hidden" />
+
+    <partial name="_PolicyForm" model="Model" />
+
+    <button class="btn btn-primary">
+        Update
+    </button>
+
+    <a asp-action="Index"
+       class="btn btn-secondary">
+        Cancel
+    </a>
+
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

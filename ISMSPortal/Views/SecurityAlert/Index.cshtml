@@ -1,0 +1,145 @@
+﻿@model IEnumerable<ISMSPortal.ViewModels.SecurityAlert.SecurityAlertListViewModel>
+
+<partial name="_AlertMessage" />
+
+<div class="card">
+
+    <div class="card-header">
+
+        <div class="d-flex justify-content-between">
+
+            <h4>Security Alerts</h4>
+
+            <a asp-action="Create"
+               class="btn btn-primary">
+
+                Add Alert
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="card-body">
+
+        <form method="get">
+
+            <div class="row mb-3">
+
+                <div class="col-md-4">
+
+                    <input name="searchText"
+                           value="@ViewBag.SearchText"
+                           class="form-control"
+                           placeholder="Search..." />
+
+                </div>
+
+                <div class="col-md-2">
+
+                    <button class="btn btn-primary">
+
+                        Search
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+        <table class="table table-bordered table-hover">
+
+            <thead>
+
+                <tr>
+
+                    <th>Title</th>
+
+                    <th>Severity</th>
+
+                    <th>Publish Date</th>
+
+                    <th>Status</th>
+
+                    <th width="180">Action</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>@item.Title</td>
+
+                        <td>
+
+                            @switch (item.Severity)
+                            {
+                                case "Critical":
+                                    <span class="badge bg-danger">Critical</span>
+                                    break;
+
+                                case "High":
+                                    <span class="badge bg-warning">High</span>
+                                    break;
+
+                                case "Medium":
+                                    <span class="badge bg-info">Medium</span>
+                                    break;
+
+                                default:
+                                    <span class="badge bg-secondary">Low</span>
+                                    break;
+                            }
+
+                        </td>
+
+                        <td>
+
+                            @item.PublishDate.ToString("dd-MMM-yyyy")
+
+                        </td>
+
+                        <td>
+
+                            @(item.IsPublished ? "Published" : "Draft")
+
+                        </td>
+
+                        <td>
+
+                            <a asp-action="Details"
+                               asp-route-id="@item.SecurityAlertId"
+                               class="btn btn-info btn-sm">
+
+                                View
+
+                            </a>
+
+                            <a asp-action="Edit"
+                               asp-route-id="@item.SecurityAlertId"
+                               class="btn btn-warning btn-sm">
+
+                                Edit
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

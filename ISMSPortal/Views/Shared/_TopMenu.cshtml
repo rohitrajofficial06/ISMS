@@ -1,0 +1,124 @@
+﻿@{
+    var controller = ViewContext.RouteData.Values["controller"]?.ToString();
+    var action = ViewContext.RouteData.Values["action"]?.ToString();
+}
+
+<nav class="navbar navbar-expand-lg top-navbar">
+
+    <div class="container-fluid">
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#topMenu"
+                aria-controls="topMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="topMenu">
+
+            <ul class="navbar-nav mx-auto">
+
+                <!-- Home -->
+                <li class="nav-item">
+                    <a asp-controller="Home"
+                       asp-action="Index"
+                       class="nav-link @(controller == "Home" ? "active" : "")">
+
+                        <i class="fas fa-home me-2"></i>
+
+                        Home
+
+                    </a>
+                </li>
+
+                <!-- Policies -->
+                <li class="nav-item">
+                    <a asp-controller="Policy"
+                       asp-action="Index"
+                       class="nav-link @(controller == "Policy" ? "active" : "")">
+
+                        <i class="fas fa-book me-2"></i>
+
+                        Policies
+
+                    </a>
+                </li>
+
+                <!-- Awareness -->
+                <li class="nav-item">
+                    <a asp-controller="Awareness"
+                       asp-action="Index"
+                       class="nav-link @(controller == "Awareness" ? "active" : "")">
+
+                        <i class="fas fa-graduation-cap me-2"></i>
+
+                        Awareness &amp; Training
+
+                    </a>
+                </li>
+
+                <!-- Incident Management -->
+                <li class="nav-item">
+                    <a asp-controller="Incident"
+                       asp-action="Index"
+                       class="nav-link @(controller == "Incident" ? "active" : "")">
+
+                        <i class="fas fa-shield-alt me-2"></i>
+
+                        Incident Management
+
+                    </a>
+                </li>
+
+                <!-- Documents -->
+                <li class="nav-item">
+                    <a asp-controller="Document"
+                       asp-action="Index"
+                       class="nav-link @(controller == "Document" ? "active" : "")">
+
+                        <i class="fas fa-folder-open me-2"></i>
+
+                        Documents
+
+                    </a>
+                </li>
+
+                <!-- Forms & Templates -->
+                <li class="nav-item">
+                    <a asp-controller="Forms"
+                       asp-action="Index"
+                       class="nav-link @(controller == "Forms" ? "active" : "")">
+
+                        <i class="fas fa-file-alt me-2"></i>
+
+                        Forms &amp; Templates
+
+                    </a>
+                </li>
+
+                <!-- Contact -->
+                <li class="nav-item">
+                    <a asp-controller="Contact"
+                       asp-action="Index"
+                       class="nav-link @(controller == "Contact" ? "active" : "")">
+
+                        <i class="fas fa-phone-alt me-2"></i>
+
+                        Contact Us
+
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>

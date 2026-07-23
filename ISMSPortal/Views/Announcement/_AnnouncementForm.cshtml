@@ -1,0 +1,88 @@
+﻿@model ISMSPortal.ViewModels.Announcement.AnnouncementBaseViewModel
+
+<div class="row">
+
+    <div class="col-md-8">
+
+        <div class="form-group mb-3">
+            <label asp-for="Title" class="form-label"></label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Description" class="form-label"></label>
+            <textarea asp-for="Description"
+                      rows="6"
+                      class="form-control"></textarea>
+            <span asp-validation-for="Description"
+                  class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="form-group mb-3">
+            <label asp-for="PublishDate"></label>
+            <input asp-for="PublishDate"
+                   type="date"
+                   class="form-control" />
+            <span asp-validation-for="PublishDate"
+                  class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="ExpiryDate"></label>
+            <input asp-for="ExpiryDate"
+                   type="date"
+                   class="form-control" />
+            <span asp-validation-for="ExpiryDate"
+                  class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="DisplayOrder"></label>
+            <input asp-for="DisplayOrder"
+                   class="form-control" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Attachment"></label>
+            <input asp-for="Attachment"
+                   type="file"
+                   class="form-control" />
+        </div>
+
+        @if (Model.AttachmentPath != null)
+        {
+            <div class="mb-3">
+                <a href="@Model.AttachmentPath"
+                   target="_blank"
+                   class="btn btn-outline-primary btn-sm">
+                    View Current Attachment
+                </a>
+            </div>
+        }
+
+        <div class="form-check">
+            <input asp-for="IsPublished"
+                   class="form-check-input" />
+
+            <label asp-for="IsPublished"
+                   class="form-check-label"></label>
+        </div>
+
+        <div class="form-check">
+
+            <input asp-for="IsPinned"
+                   class="form-check-input" />
+
+            <label asp-for="IsPinned"
+                   class="form-check-label"></label>
+
+        </div>
+
+    </div>
+
+</div>

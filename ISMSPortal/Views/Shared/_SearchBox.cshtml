@@ -1,0 +1,41 @@
+﻿@model ISMSPortal.ViewModels.Shared.SearchViewModel
+
+<form method="get"
+      asp-action="@Model.ActionName">
+
+    <div class="row mb-3">
+
+        <div class="col-md-4">
+
+            <input asp-for="SearchText"
+                   class="form-control"
+                   placeholder="Search..." />
+
+        </div>
+
+        <div class="col-md-2">
+
+            <button class="btn btn-primary">
+
+                <i class="fas fa-search"></i>
+
+                Search
+
+            </button>
+
+        </div>
+
+        <div class="col-md-2">
+
+            <a asp-action="@Model.ActionName"
+               class="btn btn-secondary">
+
+                Reset
+
+            </a>
+
+        </div>
+
+    </div>
+
+</form>
