@@ -1,30 +1,52 @@
-﻿:root {
+﻿/*================ RESPONSIVE =================*/
+
+@media (max-width:1600px) {
+
+    .hero-image {
+        max-width: 390px;
+    }
+}
+
+@media (max-width:1400px) {
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 26px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-image {
+        max-width: 340px;
+    }
+}
+
+@media (max-width:1200px) {
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-btn {
+        width: 100%;
+    }
+}
+
+
+:root {
     --primary: #0A2A66;
     --secondary: #1546A0;
     --light: #F5F8FD;
     --border: #E5E7EB;
 }
 
-body {
-    background: #f4f7fc;
-    font-family: 'Segoe UI',sans-serif;
-}
 
-.content-wrapper {
-    background: #f4f7fc;
-}
-
-.card {
-    border: none;
-    border-radius: 14px;
-    box-shadow: 0 4px 14px rgba(0,0,0,.08);
-}
-
-.card-header {
-    background: white;
-    border-bottom: 1px solid #eee;
-    font-weight: 600;
-}
 
 .dashboard-title {
     font-size: 30px;
@@ -38,167 +60,10 @@ body {
     color: #0A2A66;
 }
 
-.main-header {
-    background: #ffffff;
-    border-bottom: 1px solid #e8e8e8;
-}
 
-    .main-header .form-control {
-        border-radius: 30px;
-        height: 42px;
-    }
 
-    .main-header .btn {
-        border-radius: 30px;
-    }
 
-.navbar-badge {
-    font-size: 10px;
-}
 
-.brand-link {
-    background: white;
-}
-
-.main-sidebar {
-    background: #ffffff !important;
-}
-
-    .main-sidebar .nav-link {
-        color: #333 !important;
-        border-radius: 8px;
-        margin: 4px 8px;
-    }
-
-        .main-sidebar .nav-link.active {
-            background: #0A2A66 !important;
-            color: white !important;
-        }
-
-        .main-sidebar .nav-link:hover {
-            background: #EDF3FF;
-        }
-
-.content-wrapper {
-    padding: 15px;
-}
-
-body {
-    background: #f5f7fb;
-    font-family: 'Segoe UI',sans-serif;
-}
-
-/*================ Header ================*/
-
-.top-header {
-    background: white;
-    padding: 15px 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,.08);
-}
-
-.logo {
-    height: 45px;
-}
-
-.search-box input {
-    border-radius: 30px 0 0 30px;
-}
-
-.search-box button {
-    border-radius: 0 30px 30px 0;
-}
-
-.header-right {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 30px;
-}
-
-.icon-link {
-    color: #333;
-    text-decoration: none;
-    position: relative;
-}
-
-.notification {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background: red;
-    color: white;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 11px;
-    line-height: 18px;
-}
-
-.user-profile {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.user-image {
-    width: 45px;
-    height: 45px;
-    background: #005BAC;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-}
-
-/*================ Menu ================*/
-
-.top-menu {
-    background: #005BAC;
-}
-
-    .top-menu ul {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        list-style: none;
-    }
-
-    .top-menu li {
-        padding: 15px 25px;
-    }
-
-    .top-menu a {
-        color: white;
-        text-decoration: none;
-        font-weight: 600;
-    }
-
-    .top-menu li:hover {
-        background: #00458b;
-    }
-
-/*================ Banner ================*/
-
-.banner {
-    margin-top: 25px;
-}
-
-    .banner img {
-        width: 100%;
-        border-radius: 12px;
-    }
-
-/*================ Footer ================*/
-
-.footer {
-    background: white;
-    margin-top: 30px;
-    padding: 15px;
-    border-top: 1px solid #ddd;
-}
 
 .dashboard-card {
     background: white;
@@ -221,89 +86,65 @@ body {
     min-height: 260px;
 }
 
-/* ================= LEFT SIDEBAR ================= */
+/* ===================================
+   Sidebar
+=================================== */
 
 .left-sidebar {
     background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,.08);
-    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.08);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.sidebar-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #002060;
+    margin-bottom: 20px;
 }
 
 .sidebar-menu {
     list-style: none;
+    padding: 0;
     margin: 0;
-    padding: 15px 0;
 }
 
     .sidebar-menu li {
-        margin: 4px 10px;
+        margin-bottom: 5px;
     }
 
         .sidebar-menu li a {
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 12px 16px;
-            color: #1f2937;
+            color: #495057;
+            padding: 10px 14px;
             text-decoration: none;
-            border-radius: 8px;
-            transition: .2s;
-            font-size: 15px;
+            border-radius: 6px;
+            transition: .3s;
         }
 
-            .sidebar-menu li a i {
-                width: 20px;
-                text-align: center;
-                color: #0d3b87;
+            .sidebar-menu li a:hover {
+                background: #eef4ff;
+                color: #002060;
             }
 
-        .sidebar-menu li:hover a {
-            background: #eef4ff;
-        }
+            .sidebar-menu li a.active {
+                background: #002060;
+                color: #fff;
+            }
 
-        .sidebar-menu li.active a {
-            background: #0d3b87;
-            color: #fff;
-        }
-
-        .sidebar-menu li.active i {
-            color: #fff;
-        }
-
-.contact-card {
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    background: #fafafa;
-}
-
-.contact-icon {
-    width: 60px;
-    height: 60px;
-    margin: auto;
-    border-radius: 50%;
-    background: #0d3b87;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 26px;
-    margin-bottom: 15px;
-}
-
-.contact-card h6 {
-    font-weight: 600;
+.menu-header {
+    margin-top: 20px;
     margin-bottom: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #6c757d;
 }
 
-.contact-card a {
-    font-size: 14px;
-    word-break: break-word;
-    text-decoration: none;
-}
 
 /*================ QUICK ACTIONS =================*/
 
@@ -389,41 +230,38 @@ body {
     background: linear-gradient(135deg,#06296b,#041d4f);
     border-radius: 18px;
     overflow: hidden;
-    min-height: 390px;
+    min-height: 360px;
 }
 
     .hero-banner .card-body {
-        padding: 40px 45px !important;
+        padding: 20px 20px !important;
     }
 
     .hero-banner .row {
-        display: flex;
         align-items: center;
     }
-
 .hero-title {
     color: #fff;
-    font-size: 50px;
+    font-size: clamp(34px,2.5vw,48px);
     font-weight: 700;
-    line-height: 58px;
-    margin-bottom: 20px;
-    word-break: normal;
-    max-width: 650px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    max-width: 100%;
 }
 
 .hero-subtitle {
     color: #FFD438;
-    font-size: 34px;
+    font-size: clamp(22px,1.8vw,34px);
     font-weight: 700;
-    margin-bottom: 25px;
+    margin-bottom: 18px;
 }
 
 .hero-description {
     color: #E8EDF9;
-    font-size: 18px;
-    line-height: 34px;
-    margin-bottom: 40px;
-    max-width: 520px;
+    font-size: clamp(15px,1vw,18px);
+    line-height: 1.7;
+    margin-bottom: 30px;
+    max-width: 100%;
 }
 
 .hero-buttons {
@@ -434,7 +272,7 @@ body {
 
 .hero-btn {
     min-width: 170px;
-    height: 48px;
+    height: 54px;
     border-radius: 10px;
     font-size: 17px;
     font-weight: 600;
@@ -442,7 +280,7 @@ body {
 
 .hero-image {
     width: 100%;
-    max-width: 560px;
+    max-width: 430px;
     height: auto;
     display: block;
     margin: auto;
@@ -510,7 +348,7 @@ body {
 }
 
 .announcement-title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     color: #153D8A;
     margin-bottom: 4px;
@@ -522,7 +360,7 @@ body {
 }
 
 .announcement-date {
-    width: 110px;
+    width: 95px;
     text-align: right;
     color: #6B7280;
     font-size: 14px;
@@ -600,28 +438,11 @@ body {
     color: #1f2937;
 }
 
-.card {
-    border-radius: 10px;
-}
 
-.card-header {
-    font-weight: 600;
-}
 
-.btn i {
-    display: block;
-}
-
-.list-group-item {
-    border: none;
-    border-bottom: 1px solid #eee;
-}
-
-    .list-group-item:last-child {
-        border-bottom: none;
-    }
 
 .isms-sidebar {
+    width: 100%;
     background: #fff;
     border-radius: 16px;
     padding: 15px;
@@ -636,7 +457,7 @@ body {
     border-radius: 12px;
     text-decoration: none;
     color: #1d2b53;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 500;
     margin-bottom: 8px;
     transition: .25s;
@@ -655,8 +476,8 @@ body {
     }
 
     .sidebar-item img {
-        width: 38px;
-        height: 38px;
+        width: 34px;
+        height: 34px;
         object-fit: contain;
         flex-shrink: 0;
     }
@@ -665,25 +486,46 @@ body {
         flex: 1;
     }
 
+
+/*================ CONTACT CARD =================*/
+
 .contact-card {
-    margin-top: 35px;
-    padding: 25px;
-    border-radius: 18px;
+    margin-top: 30px;
+    padding: 24px 20px;
     background: #f7faff;
+    border-radius: 16px;
     text-align: center;
+    border: 1px solid #e6eefb;
 }
 
 .contact-icon {
-    width: 58px;
-    margin-bottom: 18px;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: #0A2A66;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
 }
 
-.contact-card h5 {
+.contact-card h6 {
     font-size: 18px;
     font-weight: 600;
+    color: #0A2A66;
+    margin-bottom: 12px;
 }
 
-.contact-card p {
+.contact-card a {
     color: #0b5ed7;
-    margin-top: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    word-break: break-word;
+    line-height: 1.5;
 }
+
+    .contact-card a:hover {
+        text-decoration: underline;
+    }

@@ -46,7 +46,10 @@ builder.Services.AddHttpContextAccessor();
 
 #region AutoMapper
 
-builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddAutoMapper(cfg =>
+{
+    // Leave empty unless you have an AutoMapper license.
+}, typeof(Program));
 
 #endregion
 

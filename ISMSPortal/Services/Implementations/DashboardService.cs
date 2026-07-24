@@ -81,23 +81,25 @@ namespace ISMSPortal.Services.Implementations
             Description = "View training materials",
             Url = "https://ykgwoffice.sharepoint.com/sites/YIL-ITSIN/ISMSTraining/Forms/AllItems.aspx",
             OpenInNewTab = true
-        },
-
-        new()
-        {
-            Title = "Session Recordings",
-            Description = "Watch recorded sessions",
-            Url = "/AwarenessSession/Recordings",
-            OpenInNewTab = true
-        },
-
-        new()
-        {
-            Title = "Posters & Presentations",
-            Description = "View awareness content",
-            Url = "/Document",
-            OpenInNewTab = true
         }
+        
+        //,
+
+        //new()
+        //{
+        //    Title = "Session Recordings",
+        //    Description = "Watch recorded sessions",
+        //    Url = "/AwarenessSession/Recordings",
+        //    OpenInNewTab = true
+        //},
+
+        //new()
+        //{
+        //    Title = "Posters & Presentations",
+        //    Description = "View awareness content",
+        //    Url = "/Document",
+        //    OpenInNewTab = true
+        //}
     };
         }
 
